@@ -19,7 +19,7 @@ export class ProdutoController {
   
   @Post()
   create(@Body() createProdutoDto: CreateProdutoDto) {
-    return this.produtoService.criar(createProdutoDto);
+    return this.produtoService.create(createProdutoDto);
   }
 
   @Patch(':id')
@@ -29,6 +29,6 @@ export class ProdutoController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.produtoService.deletar(+id);
+    return this.produtoService.delete(+id);
   }
 }

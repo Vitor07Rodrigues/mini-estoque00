@@ -17,18 +17,21 @@ export class ProdutoService {
     });
   }
 
-  criar(dados: CreateProdutoDto) {
+  create(dados: CreateProdutoDto) {
     return this.prisma.produto.create({
       data: dados
     });
   }
 
-
-  update(id: number, updateProdutoDto: UpdateProdutoDto) {
-    return `This action updates a #${id} produto`;
+  
+  update(id: number, dados: UpdateProdutoDto) {
+    return this.prisma.produto.update({
+      where: { id },
+      data: dados
+    });
   }
 
-  deletar(id: number) {
+  delete(id: number) {
     return this.prisma.produto.delete({
       where: { id }
     });
